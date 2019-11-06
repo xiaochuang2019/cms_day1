@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.xiaochuang.movie.dao.MovieMapper">
+ <select id="selAll" resultType="com.xiaochuang.movie.domain.Movie">
+ 	select * from t_movie
+ 	<if test="mType!=null and mType!=''">
+ 		order by ${mType}
+ 	</if>
+ 	<if test="ord!=null and ord!=''">
+ 		${ord}
+ 	</if>
+ </select>
+ </mapper>
